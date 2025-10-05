@@ -1,0 +1,214 @@
+<?php
+session_start();
+$nomeUsuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : null;
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Willian de Sousa Nunes e Dharlan L. Sangi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../estilos/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/estilos/boxicons.min.css' rel='stylesheet'>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>WM Turismo - Reservar viagem</title>
+    <style>
+        /* Estilo básico para o menu suspenso */
+        .user-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .user-menu span {
+            color: white;
+            cursor: pointer;
+        }
+
+        .user-menu span:hover {
+            color: var(--orange)
+        }
+
+        .user-menu .dropdown-content {
+            display: none;
+            outline: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            min-width: 150px;
+            background-color: var(--verde-escuro);
+            box-shadow: 0px 8px 8px;
+            z-index: 1;
+        }
+
+        .user-menu .dropdown-content a {
+            color: white;
+            padding: 8px 10px;
+            text-decoration: none;
+            display: block;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .user-menu .dropdown-content a:hover {
+            color: white;
+            background-color: var(--verde);
+        }
+
+        /* Exibe o menu ao passar o mouse */
+        .user-menu:hover .dropdown-content {
+            display: block;
+            transition: 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+    <a name="topo"></a>
+    <div class="background-verde">
+        <!-- cabeçalho -->
+        <header>
+            <!-- container -->
+            <div class="container">
+                <nav>
+                    <div class="logo">
+                        <a href="reserva_usuario.php"> WM turismo </a>
+                    </div>
+                    <ul class="ul">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="servicos.php">Serviços</a></li>
+                        <li><a href="quemsomos.php">Quem somos</a></li>
+                        <li><a href="contato.php">Contato</a></li>
+                        <?php if ($nomeUsuario): ?>
+                        <li class="user-menu">
+                            <span>
+                                <?php echo htmlspecialchars($nomeUsuario); ?>
+                            </span>
+                            <div class="dropdown-content">
+                                <a class="bx bx-user" href="../paginas/perfil_usuario.php">       
+                                Sua conta</a>
+                                <a class="bx bx-exit" href="../banco/logout.php">       
+                                Sair</a>
+                            </div>
+                        </li>
+                        <?php else: ?>
+                        <li><a href="logar_usuario.php"><button class="btn-gradiente">Entrar</button></a></li>
+                        <?php endif; ?>
+                    </ul>
+                    <div class="menu-icon">
+                        <img src="../imgs/menu.png" alt="ícone de menu">
+                    </div>
+                </nav>
+            </div>
+            <!-- fim container -->
+        </header>
+        <!-- fim cabeçalho -->
+    </div>
+    <!-- form2 -->
+    <section class="form-registro">
+        <br>
+        <div class="container">
+            <!-- registro -->
+            <div class="box-registro">
+                <h2>Reservar Viagem</h2>
+
+                <form action="../banco/reservar.php" method="POST">
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="nome" name="nome" placeholder="Nome" required>
+                        <i class="bx bx-user" aria-hidden="true"></i>
+                    </div>
+                    <br>
+                    <div class="input-box">
+                        <input type="email" class="input-field" id="email" name="email" placeholder="Email" required>
+                        <i class="bx bx-envelope" aria-hidden="true"></i>
+                    </div>
+                    <br>
+                    <div class="input-box">
+                        <input type="tel" class="input-field" id="telefone" name="telefone" placeholder="Telefone" required>
+                        <i class="bx bx-phone" aria-hidden="true"></i>
+                    </div>
+                    <br>
+                    
+                    <div class="data-nasc">
+                        <label for="destino">Destino:</label>
+                        <select id="destino" name="destino" class="input-field" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="las_vegas">Las Vegas, USA</option>
+                            <option value="toronto">Toronto, Canadá</option>
+                            <option value="paris">Paris, França</option>
+                            <option value="roma">Roma, Itália</option>
+                            <option value="monte_fuji">Monte fuji, Japão</option>
+                            <option value="sydney">Sydney, Austrália</option>
+                        </select>
+                        <br><br>
+                        <label for="tipo_viagem">Tipo de Viagem:</label>
+                        <select id="tipo_viagem" name="tipo_viagem" class="input-field">
+                            <option value="">Selecione (Opcional)</option>
+                            <option value="aventura">Aventura</option>
+                            <option value="cultural">Cultural</option>
+                            <option value="ecoturismo">Ecoturismo</option>
+                            <option value="gastronomia">Gastronomia</option>
+                            <option value="praia">Praia</option>
+                            <option value="romantica">Romântica</option>
+                        </select>
+                        <br><br>
+                        <label for="data_ida">Data de Ida: </label>
+                        <input type="date" id="data_ida" name="data_ida" class="input-field" required>
+                        <br>
+                        <label for="data_volta">Data de Volta: </label>
+                        <input type="date" id="data_volta" name="data_volta" class="input-field" required>
+                        <br>
+                        <label for="pessoas">Número de Pessoas: </label>
+                        <input type="number" id="pessoas" name="pessoas" class="input-field" required min="1" max="30" placeholder="1">
+                    </div>
+                    <br><br>
+                    <button type="submit" id="reservarbtn" onclick="return reservar()">Reservar</button>
+                </form>
+            </div>
+            <!-- fim registro -->
+        </div>
+        <br>
+    </section>
+    <footer>
+        <div class="container">
+            <!-- ul 1 -->
+            <ul>
+                <h3>WM Turismo</h3>
+                <p>&copy 2024 <br> Todos os direitos reservados</p>
+                <div class="redes-sociais">
+                    <a href="#"><img src="../imgs/facebook.png" alt="facebook"></a>
+                    <a href="#"><img src="../imgs/instagram.png" alt="instagram"></a>
+                    <a href="#"><img src="../imgs/linkedin.png" alt="linkedin"></a>
+                </div>
+            </ul>
+            <!-- ul 2 -->
+            <ul>
+                <h3>Link</h3>
+                <li><a href="index.php">home</a></li>
+                <li><a href="servicos.php">servicos</a></li>
+                <li><a href="quemsomos.php">quem somos</a></li>
+                <li><a href="contato.php">contato</a></li>
+                <li><a href="#topo">voltar ao topo</a></li>
+            </ul>
+            <!-- ul 3 -->
+            <ul>
+                <h3>Nos contate</h3>
+                <li>
+                    <p><a href="tel:+55 xxxx-xxxx">+55 xxxx-xxxx</a></p>
+                </li>
+                <li>
+                    <p><a href="mailto:email@example.com">email@example.com</a></p>
+                </li>
+                <li>
+                    <p>Brasil</p>
+                </li>
+            </ul>
+        </div>
+        <br>
+    </footer>
+    <!-- fim rodape -->
+    <script src="../funcoes/main.js"></script>
+</body>
+
+</html>

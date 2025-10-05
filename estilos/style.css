@@ -1,0 +1,791 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --verde-escuro: #14424b;
+    --verde: #2f9364;
+    --orange: #ff7c37;
+    --degrade-btn: linear-gradient(#fe9611, #ff5c00);
+    --color-p: #a1a1a1;
+    --color-p-2: #868585;
+}
+
+.background-verde {
+    background: var(--verde-escuro);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--verde-escuro);
+    z-index: 3;
+}
+
+/* classes reutilizaveis */
+.container {
+    max-width: 1440px;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+.btn-gradiente {
+    padding: 10px 25px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-image: var(--degrade-btn);
+}
+
+.btn-gradiente:hover {
+    box-shadow: 0px 10px 27px 8px #19373d;
+}
+
+/* classes do site */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo a {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.ul {
+    display: flex;
+    align-items: center;
+}
+
+.ul li {
+    margin: 0 35px;
+    font-size: 15px;
+}
+
+.ul li a {
+    color: white;
+}
+
+.ul li a:hover {
+    color: var(--orange);
+    background-color: transparent;
+}
+
+main .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.main-text {
+    width: 50%;
+    color: white;
+}
+
+.main-text h1 {
+    font-size: 4rem;
+}
+
+.main-text div {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+}
+
+.main-text div img {
+    padding-left: 40px;
+}
+
+.main-img {
+    width: 50%;
+}
+
+.main-img img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 10px 27px 8px #19373d;
+
+}
+
+/* section diferenciais */
+.diferenciais .container {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto;
+}
+
+.diferenciais .card {
+    width: 30%;
+    cursor: pointer;
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.diferenciais .card:hover {
+    box-shadow: 0px 10px 27px 8px #a1a1a1;
+}
+
+.diferenciais .card img {
+    width: 60px;
+}
+
+.diferenciais .card .titulo {
+    margin: 13px 0;
+    font-weight: 600;
+}
+
+/* section viagem */
+.viagem .container {
+    display: flex;
+    align-items: center;
+}
+
+.viagem .viagem-img {
+    width: 50%;
+}
+
+.viagem .viagem-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.viagem .viagem-text {
+    width: 50%;
+    padding-left: 90px;
+}
+
+.viagem .viagem-text h2 {
+    font-size: 2.5em;
+}
+
+.viagem .viagem-text p {
+    margin: 20px 0;
+    color: var(--color-p);
+}
+
+.viagem .viagem-text p b {
+    color: black;
+    font-size: 25px;
+}
+
+/* fim section viagem */
+/* menu icon */
+.menu-icon {
+    display: none;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* section formularios */
+.form-registro {
+    background-color: var(--verde);
+}
+
+.newsletter {
+    margin-top: 50px;
+    background-color: var(--verde);
+}
+
+.form-registro .box-registro,
+.newsletter .box-newsletter {
+    text-align: center;
+    padding: 100px;
+    background-image: url('../imgs/background-newsletter.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0px 10px 27px 8px #19373d;
+}
+
+.newsletter .box-newsletter h2 {
+    font-size: 2.5rem;
+}
+
+.form-registro .box-registro h2 {
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+.newsletter .box-newsletter p {
+    margin: 13px 0;
+}
+
+.form-registro .box-registro .input-field {
+    width: 50%;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    color: #00000098;
+    background-color: #faefda;
+}
+
+.newsletter .box-newsletter input {
+    width: 35%;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    color: #00000098;
+    background-color: #faefda;
+}
+
+.form-registro .box-registro button {
+    font-size: 15px;
+    width: 50%;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 14px;
+    color: white;
+    background-color: var(--verde);
+    cursor: pointer;
+}
+
+.newsletter .box-newsletter button {
+    font-size: 15px;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 14px;
+    color: white;
+    background-color: var(--verde);
+    cursor: pointer;
+}
+
+.form-registro .box-registro button:hover,
+.newsletter .box-newsletter button:hover {
+    background-color: var(--verde-escuro);
+}
+
+.input-box i {
+    position: relative;
+    left: -40px;
+}
+
+.sexo-select p {
+    width: 55%;
+
+}
+
+#feminino,
+#masculino,
+#outro {
+    width: 5%;
+    padding: 5%;
+    margin-left: 25px;
+}
+
+#data_nascimento {
+    width: 32%;
+}
+
+/* fim newsletter & form-registro */
+/* rodape */
+footer {
+    background-color: var(--verde-escuro);
+}
+
+footer .container {
+    display: flex;
+    color: white;
+}
+
+footer .container ul {
+    width: 25%;
+    margin-top: 20px;
+}
+
+footer .container h3 {
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+footer .container .redes-sociais img {
+    margin-right: 10px;
+}
+
+footer .container ul>p {
+    margin-bottom: 40px;
+}
+
+footer .container li {
+    margin: 10px 0;
+}
+
+footer .container a {
+    color: white;
+}
+
+/* fim rodape */
+.destinos .orange {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+    color: var(--orange);
+}
+
+.destinos h2 {
+    font-size: 2.5rem;
+}
+
+.destinos .cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 30px 0;
+}
+
+.destinos .cards .card-item1:hover,
+.destinos .cards .card-item2:hover,
+.destinos .cards .card-item3:hover {
+    box-shadow: 0px 10px 27px 8px #a1a1a1;
+}
+
+.destinos .cards .card-item1,
+.destinos .cards .card-item2,
+.destinos .cards .card-item3 {
+    width: 30%;
+    text-align: center;
+    padding: 90px 50px;
+    border-radius: 20px;
+    transition: 0.3s;
+    justify-content: space-between;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.destinos .cards .local {
+    margin: 15px 0;
+    color: white;
+}
+
+.destinos #destinos-btn {
+    background-color: var(--orange);
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 80%;
+    justify-content: space-between;
+}
+
+.destinos #destinos-btn:hover {
+    box-shadow: 0px 10px 27px 8px #a1a1a1;
+}
+
+.informacoes .container .membros {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto;
+}
+
+.informacoes .membro {
+    width: 40%;
+    cursor: pointer;
+    padding: 30px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.informacoes .membro:hover {
+    box-shadow: 0px 10px 27px 8px #a1a1a1;
+}
+
+.informacoes .membro img {
+    width: 60px;
+}
+
+.informacoes .membro .titulo {
+    margin: 13px 0;
+    font-weight: 600;
+}
+
+/* destaques */
+.destaques {
+    background-color: var(--verde);
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+}
+
+.destaques h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.destaques .subtitulo {
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 40px;
+}
+
+.destaques .cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 30px 0;
+}
+
+.destaques .cards .card-item-des {
+    width: 30%;
+    text-align: center;
+    padding: 90px 50px;
+    border-radius: 20px;
+    transition: 0.3s;
+    justify-content: space-between;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.destaques .cards .card-item-des:hover {
+    box-shadow: 0px 10px 27px 8px #19373d;
+}
+
+.destaques .cards button {
+    padding: 10px 20px;
+    color: white;
+    background-color: var(--orange);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card-item-des h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.card-item-des .preco {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.card-item-des .preco del {
+    font-size: 0.9rem;
+    color: #ffb6b6;
+    margin-right: 5px;
+}
+.carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: calc(100% * 2);
+    /* Mostra 2 cards por vez */
+}
+/* fim destaques */
+
+.reserva-viagem {
+    background-image: url('../imgs/background-newsletter.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 27px 8px #19373d;
+}
+
+.reserva-viagem .input-field {
+    width: 50%;
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    color: #00000098;
+    background-color: #faefda;
+}
+
+.reserva-viagem h2 {
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+.reserva-viagem label {
+    color: var(--color-p-2);
+    display: block;
+    margin-top: 10px;
+}
+
+.reserva-viagem input,
+.reserva-viagem select {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reserva-viagem button {
+    font-size: 15px;
+    width: 50%;
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+    background-color: var(--verde);
+    cursor: pointer;
+    margin-top: 60px;
+}
+
+.reserva-viagem button:hover {
+    background-color: var(--verde-escuro);
+}
+
+.reserva-viagem i {
+    position: relative;
+    left: -40px;
+}
+
+.form-reserva {
+    background-color: var(--verde);
+}
+
+#destino {
+    width: 42%;
+}
+
+#tipo_viagem {
+    width: 36%;
+}
+
+#data_ida {
+    width: 39%;
+}
+
+#data_volta {
+    width: 37%;
+    margin-top: 25px;
+}
+
+#pessoas {
+    width: 33%;
+    margin-top: 25px;
+}
+
+
+/* Estilos para a modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+
+
+/* responsivo */
+@media (max-width: 960px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .ul {
+        position: fixed;
+        background: var(--verde-escuro);
+        top: 0;
+        width: 100%;
+        height: 100%;
+        left: 100%;
+        transition: 0.5s;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .ul li {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+
+    .ul.ativo {
+        left: 0;
+    }
+
+    main .container {
+        flex-direction: column;
+    }
+
+    main .container .main-img,
+    main .container .main-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    main .container .main-text h1 {
+        font-size: 4rem;
+    }
+
+    main .container .main-text div {
+        justify-content: center;
+    }
+
+    .diferenciais .container {
+        flex-direction: column;
+    }
+
+    .diferenciais .card {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .viagem .container {
+        flex-direction: column-reverse;
+    }
+
+    .viagem .viagem-text,
+    .viagem .viagem-img {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    .form-registro .box-registro,
+    .newsletter .box-newsletter {
+        padding: 50px;
+    }
+
+    .newsletter .box-newsletter h2 {
+        font-size: 2rem;
+    }
+
+    .newsletter .box-newsletter input {
+        width: 90%;
+    }
+
+    .form-registro .box-registro button,
+    .newsletter .box-newsletter button {
+        width: 50%;
+        margin-top: 20px;
+    }
+
+    footer .container {
+        flex-direction: column;
+    }
+
+    footer .container ul {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .destaques .cards,
+    .destinos .cards {
+        flex-direction: column;
+    }
+
+    .destaques .cards .card-item-des,
+    .destinos .cards .card-item1,
+    .destinos .cards .card-item2,
+    .destinos .cards .card-item3 {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .informacoes .membros {
+        flex-direction: column;
+    }
+
+    .informacoes .membros .membro {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    #feminino,
+    #masculino,
+    #outro {
+        margin-left: 0;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+
+    .data-nasc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 -120px;
+    }
+
+    .input-box {
+        margin: 0 -120px;
+
+    }
+
+    #data_nascimento,
+    #destino,
+    #tipo_viagem,
+    #data_ida,
+    #data_volta,
+    #pessoas {
+        width: 50%;
+    }
+
+    .destinos #destinos-btn {
+        margin-top: 30px;
+        margin-left: 35%;
+    }
+    
+    
+
+}
