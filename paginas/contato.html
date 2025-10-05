@@ -71,27 +71,27 @@ $nomeUsuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : null;
             <div class="container">
                 <nav>
                     <div class="logo">
-                        <a href="contato.php">WM turismo</a>
+                        <a href="contato.html">WM turismo</a>
                     </div>
                     <ul class="ul">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="servicos.php">Serviços</a></li>
-                        <li><a href="quemsomos.php">Quem somos</a></li>
-                        <li><a href="contato.php">Contato</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="quemsomos.html">Quem somos</a></li>
+                        <li><a href="contato.html">Contato</a></li>
                         <?php if ($nomeUsuario): ?>
                         <li class="user-menu">
                             <span>
                                 <?php echo htmlspecialchars($nomeUsuario); ?>
                             </span>
                             <div class="dropdown-content">
-                                <a class="bx bx-user" href="../paginas/perfil_usuario.php">       
+                                <a class="bx bx-user" href="../paginas/perfil_usuario.html">       
                                 Sua conta</a>
                                 <a class="bx bx-exit" href="../banco/logout.php">
                                 Sair</a>
                             </div>
                         </li>
                         <?php else: ?>
-                        <li><a href="logar_usuario.php"><button class="btn-gradiente">Entrar</button></a></li>
+                        <li><a href="logar_usuario.html"><button class="btn-gradiente">Entrar</button></a></li>
                         <?php endif; ?>
                     </ul>
                     <div class="menu-icon">
@@ -147,10 +147,10 @@ $nomeUsuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : null;
                 </ul>
                 <ul>
                     <h3>Links</h3>
-                    <li><a href="index.php">home</a></li>
-                    <li><a href="servicos.php">servicos</a></li>
-                    <li><a href="quemsomos.php">quem somos</a></li>
-                    <li><a href="contato.php">contato</a></li>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="servicos.html">servicos</a></li>
+                    <li><a href="quemsomos.html">quem somos</a></li>
+                    <li><a href="contato.html">contato</a></li>
                     <li><a href="#topo">voltar ao topo</a></li>
                 </ul>
                 <ul>

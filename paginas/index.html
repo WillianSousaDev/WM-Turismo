@@ -86,14 +86,14 @@ $nomeUsuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : null;
                                 <?php echo htmlspecialchars($nomeUsuario); ?>
                             </span>
                             <div class="dropdown-content">
-                                <a class="bx bx-user" href="../paginas/perfil_usuario.php">       
+                                <a class="bx bx-user" href="../paginas/perfil_usuario.html">       
                                 Sua conta</a>
                                 <a class="bx bx-exit" href="../banco/logout.php">       
                                 Sair</a>
                             </div>
                         </li>
                         <?php else: ?>
-                        <li><a href="logar_usuario.php"><button class="btn-gradiente">Entrar</button></a></li>
+                        <li><a href="logar_usuario.html"><button class="btn-gradiente">Entrar</button></a></li>
                         <?php endif; ?>
                     </ul>
                     <div class="menu-icon">
@@ -113,7 +113,7 @@ $nomeUsuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : null;
                     <h1>A terra da aventura te espera!</h1>
                     <h2>Vamos viajar?</h2>
                     <div>
-                        <a href="servicos.php"><button class="btn-gradiente">Consultar destinos</button></a>
+                        <a href="servicos.html"><button class="btn-gradiente">Consultar destinos</button></a>
                         <img src="../imgs/verificado.png" alt="verificado">
                     </div>
                 </div>
